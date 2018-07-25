@@ -1,0 +1,12 @@
+.img-preview {
+  max-width: 300px;
+  margin-bottom: 15px;
+}
+
+.action-btns {
+  margin-bottom: 15px;
+}
+
+.action-btns button {
+  margin-right: 15px;
+}

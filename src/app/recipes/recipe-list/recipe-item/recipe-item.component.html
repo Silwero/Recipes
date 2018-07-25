@@ -1,9 +1,11 @@
-<a *ngFor="let recipe of recipes" (click)="onSelectRecipe(recipe)" href="#" class="list-group-item clearfix">
-    <div class="pull-left">
-      <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-      <div class="list-group-item-text">{{recipe.description}}</div>
-    </div>
-    <div class="pull-right">
+<a
+  *ngFor="let recipe of recipes; let i = index"
+  [routerLink]="[i]"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+    <div class="pull-right recipe-img">
       <img src="{{recipe.imagePath}}" alt="{{recipe.name}}" style="max-width: 50px; max-height: 50px; border-radius: 3px;">
     </div>
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <div class="list-group-item-text">{{recipe.description}}</div>
   </a>
