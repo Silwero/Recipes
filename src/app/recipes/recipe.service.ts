@@ -8,10 +8,11 @@ export class RecipeService {
   private recipes: Recipe[] = [
     new Recipe(
       'A Test Recipe',
-      'Lorem Ipsum Test',
+      // tslint:disable-next-line:max-line-length
+      'Lorem ipsum dolor sit amen ipsum dolor sit amen ipsum dolor sit amen ipsum dolor sit amen ipsum dolor sit amen ipsum dolor sit amen ipsum dolor sit amen',
       'http://placehold.it/400x400',
       [
-        new Ingredient('Tomato', 3)
+        new Ingredient('Tomatos', 3)
       ]
     ),
     new Recipe(
@@ -31,6 +32,11 @@ export class RecipeService {
 
   getRecipes() {
     return [...this.recipes];
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipeChanged.next([...this.recipes]);
   }
 
   deleteRecipe(index: number) {

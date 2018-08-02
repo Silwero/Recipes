@@ -1,10 +1,10 @@
-import { RecipeService } from './../recipe.service';
+import { RecipeService } from '../recipe.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
-import { Ingredient } from './../../shared/ingredient.model';
-import { Recipe } from './../recipe.model';
+import { Ingredient } from '../../shared/ingredient.model';
+import { Recipe } from '../recipe.model';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -30,7 +30,6 @@ export class RecipeDetailComponent implements OnInit {
 
   onDeleteRecipe(id: number) {
     this.recipeService.deleteRecipe(id);
-    console.log(this.router);
     this.router.navigate(['recipes']);
   }
 
